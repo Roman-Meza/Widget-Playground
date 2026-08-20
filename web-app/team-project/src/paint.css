@@ -1,0 +1,92 @@
+#myCanvas {
+            border: 3px solid black; /* Borde para el canvas */
+			position:relative; 
+			z-index: 0;
+			background-color:rgba(255,255,255,1);
+        }
+		#overlay {
+			background-color:rgba(0,0,0,0); 
+			z-index: 1;
+			position:absolute;
+		}
+        .controls, .colorslider, button {
+            margin: 5px;     /* Separación entre controles y canvas */
+        }
+		.colorslider{
+			margin-top: -20px;;
+		}
+		#colorpreview{
+			height:100px;
+			width:100px;
+			background-color:rgba(0,0,0,1);
+			position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  margin: -50px 0 0 -50px; 
+		}
+		@font-face {
+		  font-family: '8bitoperator';
+		  src: url('assets/paint/8bitoperator.ttf') format('truetype');
+		  font-style: normal;
+		}
+		.previewbg{
+		height: 120px;
+		width: 120px;
+			background-image: url('assets/paint/checker pattern.png');
+			position: relative;
+			margin: 0 auto;
+		}
+		table.paint {
+			background-color:#f5daeb;
+			border: 10px groove;
+			border-color:#d90f4f;
+			padding:10px;
+			border-bottom-style:none;
+			margin-bottom:-50px;
+			padding-bottom:20px;
+		}
+		table.outer {
+			padding-left:5%;
+			margin-top:-35px;
+			
+			margin-bottom:47px;
+		}
+		.paintbody {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-family: '8bitoperator';
+			font-size:12px;
+			background: linear-gradient(0deg, rgba(0,67,107,1) 9%, rgba(48,220,255,1) 100%);
+			background-size:100%100%;
+			}
+		button.paint {
+			padding-left:5px;
+			padding-right:5px;
+			font-family: '8bitoperator';
+			font-size: 12px;
+			border-color:black;
+			border-width:5px;
+			margin:3px;
+		}
+		img{
+			padding-top:6px;
+			height:15px;
+		}
+		img.paintlogo{
+			height:150px;
+			padding-bottom:5px;
+		}
+		img.mario{
+			height:335px;
+			padding-top:10px;
+		}
+		#redRange{
+			accent-color:red;
+		}
+		#greenRange{
+			accent-color:green;
+		}
+		#blueRange{
+			accent-color:blue;
+		}
