@@ -1,4 +1,5 @@
 import './paint.css';
+import { Link } from 'react-router-dom';
 import cursorsq from './assets/paint/cursorsq.png';
 import cursorci from './assets/paint/cursorci.png';
 import cursorci1 from './assets/paint/cursorci1.png';
@@ -85,6 +86,11 @@ function Paint() {
 				</tr>
 			</tbody>
 		</table>
+		<Link to="/">
+          <button type="button" className="counter">
+            Return to Home
+          </button>
+        </Link>
 		</div>
 	)
 }

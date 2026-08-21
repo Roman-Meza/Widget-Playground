@@ -78,8 +78,12 @@
 
 #next-steps {
   display: flex;
+  flex-direction: column;
   border-top: 1px solid var(--border);
-  text-align: left;
+  text-align: center;
+  align-items: center;
+  place-content: center;
+  place-items: center;
 
   & > div {
     flex: 1 1 0;
@@ -187,4 +191,10 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+.app-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
