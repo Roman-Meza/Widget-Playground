@@ -37,6 +37,32 @@ function App() {
         </Link>
         </p>
         </div>
+        <div className="app-card">
+          <div>
+          <div className="app-logo-placeholder" role="img" aria-label="OutBreak logo">🕹️</div></div>
+          <p>
+            A retro Breakout-style arcade game.< br/>< br/>
+            Smash every block with your mouse-controlled paddle!< br/>< br/>
+            <Link to="/outbreak">
+          <button type="button" className="counter">
+            Load OutBreak
+          </button>
+        </Link>
+        </p>
+        </div>
+        <div className="app-card">
+          <div>
+          <div className="app-logo-placeholder" role="img" aria-label="Weather Duel logo">🌦️</div></div>
+          <p>
+            Guess if the world is hotter or more humid than your city.< br/>< br/>
+            Real weather data, streak-based Higher/Lower gameplay!< br/>< br/>
+            <Link to="/weatherduel">
+          <button type="button" className="counter">
+            Load Weather Duel
+          </button>
+        </Link>
+        </p>
+        </div>
       </section>
     </>
   )

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.outbreak-page {
+	margin: 0;
+	font-family: 'Press Start 2P', monospace;
+	text-align: center;
+	padding: 40px 20px 56px;
+	box-sizing: border-box;
+	background: radial-gradient(circle at 50% -10%, #3a0864 0%, #10021f 55%, #05010b 100%);
+	color: #f5f0ff;
+}
+
+.outbreak-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 28px;
+}
+
+.outbreak-score-panel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.outbreak-title {
+	margin: 0 0 24px;
+	display: inline-block;
+	padding: 20px 40px;
+	border-radius: 14px;
+	font-size: 34px;
+	letter-spacing: 6px;
+	color: #fff;
+	background: linear-gradient(135deg, #2a0845, #4d0f7a);
+	text-shadow: 0 0 10px #ff2fd0, 0 0 24px #00e5ff;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08), 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.outbreak-canvas-wrap {
+	display: inline-block;
+	line-height: 0;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow:
+		0 0 0 3px #00e5ff,
+		0 0 30px 6px rgba(0, 229, 255, 0.45),
+		0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+#outbreakCanvas {
+	display: block;
+	background: radial-gradient(ellipse at center, #1b0433 0%, #0a0116 100%);
+}
+
+.outbreak-scoreboard {
+	background: linear-gradient(135deg, #2a0845, #4d0f7a);
+	border-radius: 14px;
+	padding: 24px 36px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+	min-width: 160px;
+}
+
+.outbreak-scoreboard h2 {
+	font-size: 13px;
+	letter-spacing: 2px;
+	color: #c9a3ff;
+	margin: 0 0 8px;
+}
+
+.outbreak-score-value {
+	font-size: 30px;
+	margin: 0 0 24px;
+	color: #00e5ff;
+	text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+}
+
+.outbreak-score-value:last-child {
+	margin-bottom: 0;
+}
+
+.outbreak-instructions {
+	margin: 32px auto 0;
+	max-width: 560px;
+	padding: 24px 20px;
+	border-radius: 16px;
+	background: linear-gradient(135deg, #1b0433, #2a0845);
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.outbreak-instructions h2 {
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin: 0 0 20px;
+	color: #f5f0ff;
+}
+
+.outbreak-instructions h2.outbreak-win {
+	color: #4dff88;
+	text-shadow: 0 0 12px rgba(77, 255, 136, 0.7);
+}
+
+.outbreak-instructions h2.outbreak-lose {
+	color: #ff4d6d;
+	text-shadow: 0 0 12px rgba(255, 77, 109, 0.7);
+}
+
+.outbreak-buttons {
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.outbreak-page .counter {
+	font-size: 13px;
+	color: #10021f;
+	background: linear-gradient(135deg, #00e5ff, #7df9ff);
+	border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.outbreak-page .counter:hover {
+	border-color: #fff;
+}
+
+.outbreak-page .counter.outbreak-cheat {
+	background: transparent;
+	color: #c9a3ff;
+	border: 2px dashed rgba(201, 163, 255, 0.5);
+	font-size: 11px;
+}
