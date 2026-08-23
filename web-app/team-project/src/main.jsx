@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App'
 import Paint from './paint'
+import Outbreak from './outbreak'
+import WeatherDuel from './weatherduel'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
   {
     path: "/paint",
     element: <Paint />,
+  },
+  {
+    path: "/outbreak",
+    element: <Outbreak />,
+  },
+  {
+    path: "/weatherduel",
+    element: <WeatherDuel />,
   },
 ]);
 
