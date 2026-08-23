@@ -63,6 +63,19 @@ function App() {
         </Link>
         </p>
         </div>
+        <div className="app-card">
+          <div>
+          <div className="app-logo-placeholder" role="img" aria-label="ChromaFlash logo">🌈</div></div>
+          <p>
+            Memorize a color, then click where it was on the wheel.< br/>< br/>
+            Fast-paced color memory with a scoring streak!< br/>< br/>
+            <Link to="/chromaflash">
+          <button type="button" className="counter">
+            Load ChromaFlash
+          </button>
+        </Link>
+        </p>
+        </div>
       </section>
     </>
   )

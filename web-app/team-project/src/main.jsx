@@ -6,6 +6,7 @@ import App from './App'
 import Paint from './paint'
 import Outbreak from './outbreak'
 import WeatherDuel from './weatherduel'
+import ChromaFlash from './chromaflash'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/weatherduel",
     element: <WeatherDuel />,
+  },
+  {
+    path: "/chromaflash",
+    element: <ChromaFlash />,
   },
 ]);
 

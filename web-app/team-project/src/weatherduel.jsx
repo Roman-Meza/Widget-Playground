@@ -202,7 +202,7 @@ function WeatherDuel() {
 							{searchResults.map((r) => (
 								<li key={`${r.id}`}>
 									<button type="button" onClick={() => startGame(r)}>
-										{r.name}{r.admin1 ? `, ${r.admin1}` : ''} — {r.country}
+										{r.name}{r.admin1 ? `, ${r.admin1}` : ''} - {r.country}
 									</button>
 								</li>
 							))}
