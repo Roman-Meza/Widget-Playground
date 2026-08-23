@@ -31,6 +31,7 @@ function Outbreak() {
 					<h2 id="outbreakWin">You move with your mouse!</h2>
 					<div className="outbreak-buttons">
 						<button type="button" className="counter" id="outbreakRestart">Restart</button>
+						<button type="button" className="counter" id="outbreakMusic">Music: Off</button>
 						<button type="button" className="counter outbreak-cheat" id="outbreakGanar" title="Modo trampa">Win (cheats)</button>
 					</div>
 				</div>
@@ -53,8 +54,14 @@ function initializeOutbreak(pageRef) {
 	const winHeading = getElementById('outbreakWin');
 	const ganarButton = getElementById('outbreakGanar');
 	const restartButton = getElementById('outbreakRestart');
+	const musicButton = getElementById('outbreakMusic');
 	const scoreDisplay = getElementById('outbreakScore');
 	const blocksDisplay = getElementById('outbreakBlocks');
+
+	// drop the track at public/outbreak-music.mp3 and this just starts working, no code changes needed
+	const music = new Audio('/outbreak-music.mp3');
+	music.loop = true;
+	let musicPlaying = false;
 
 	const Pelota = 5;
 
@@ -273,6 +280,17 @@ function initializeOutbreak(pageRef) {
 		win();
 	}
 
+	// flips the background track on/off, ignores errors if the file just isn't there yet
+	function toggleMusic() {
+		if (musicPlaying) {
+			music.pause();
+		} else {
+			music.play().catch(() => {});
+		}
+		musicPlaying = !musicPlaying;
+		musicButton.textContent = musicPlaying ? 'Music: On' : 'Music: Off';
+	}
+
 	// stops the old loop (if it's still running) and starts fresh
 	function reiniciar() {
 		if (rafRefrescar) cancelAnimationFrame(rafRefrescar);
@@ -299,15 +317,18 @@ function initializeOutbreak(pageRef) {
 	canvas.addEventListener('mousemove', handleMouseMove);
 	ganarButton.addEventListener('click', ganar);
 	restartButton.addEventListener('click', reiniciar);
+	musicButton.addEventListener('click', toggleMusic);
 	refrescar();
 
 	return () => {
 		gameOver = true;
 		if (rafRefrescar) cancelAnimationFrame(rafRefrescar);
 		if (rafCuadros) cancelAnimationFrame(rafCuadros);
+		music.pause();
 		canvas.removeEventListener('mousemove', handleMouseMove);
 		ganarButton.removeEventListener('click', ganar);
 		restartButton.removeEventListener('click', reiniciar);
+		musicButton.removeEventListener('click', toggleMusic);
 	};
 }
 
