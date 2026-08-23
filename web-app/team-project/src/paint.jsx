@@ -18,9 +18,8 @@ import rainbow from './assets/paint/rainbow.png';
 import rainbow1 from './assets/paint/rainbow1.png';
 import dropper from './assets/paint/dropper.png';
 import logo from './assets/paint/logo.png';
-import mario from './assets/paint/mario.png';
-import music from './assets/paint/Creative Exercise.mp3';
 import { useRef, useEffect } from 'react';
+
 
 function Paint() {
 	const paintRef = useRef(null);
@@ -56,7 +55,7 @@ function Paint() {
 											<button className="paint" id="rainbowH"><img src={rainbow} alt="Horizontal rainbow" /></button>
 									<button className="paint" id="rainbowV"><img src={rainbow1} alt="Vertical rainbow" /></button>
 									<button className="paint" id="dropper"><img src={dropper} alt="Color picker" /></button><br />
-											<button className="paint" id="clearCanvas">Clear canvas</button><button className="paint" id="saveCanvas">Save</button><button className="paint" id="playMusic">Toggle music</button><br />
+											<button className="paint" id="clearCanvas">Clear canvas</button>{/*<button className="paint" id="playMusic">Toggle music</button><br /> <button className="paint" id="saveCanvas">Save</button> */ }
 										</div>
 									</td>
 									<td>
@@ -95,6 +94,7 @@ function Paint() {
 	)
 }
 
+
 function initializePaint(paintRef) {
 	const getElementById = (id) => paintRef.current?.querySelector(`#${id}`);
 	const setCursor = (cursorUrl) => {
@@ -103,9 +103,7 @@ function initializePaint(paintRef) {
 	const setBrushCursor = (lineWidth) => {
 		setCursor(lineWidth <= 3 ? cursor : lineWidth < 8 ? cursor1 : cursor2);
 	};
-var musica = new Audio({src: music});
-		musica.loop=true;
-		var tocaMusica=false;
+
 		const canvas = getElementById('myCanvas'); // Obtener el canvas
 		const overlay = getElementById('overlay');
         const ctx = canvas.getContext('2d'); // Obtener el contexto del canvas
@@ -186,20 +184,20 @@ var musica = new Audio({src: music});
         });
 
 	    // Guardar dibujo como .png
-		var link = getElementById('saveCanvas');
-	link.setAttribute('download', 'drawing.png');
-	link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-	link.click();
+		// var link = getElementById('saveCanvas');
+	// link.setAttribute('download', 'drawing.png');
+	// link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+	// link.click();
 
-		getElementById('playMusic').addEventListener('click', () => {
-            if(tocaMusica){
-				musica.pause();
-				tocaMusica=false;
-			}else{
-				musica.play();
-				tocaMusica=true;
-			}
-        });
+		// getElementById('playMusic').addEventListener('click', () => {
+        //     if(tocaMusica){
+		// 		musica.pause();
+		// 		tocaMusica=false;
+		// 	}else{
+		// 		musica.play();
+		// 		tocaMusica=true;
+		// 	}
+        // });
 		
 		getElementById('drawSquare').addEventListener('click', () => {
 			if(drawingSquare){

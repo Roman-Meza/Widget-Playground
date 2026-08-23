@@ -41,13 +41,13 @@
 			border: 10px groove;
 			border-color:#d90f4f;
 			padding:10px;
-			border-bottom-style:none;
-			margin-bottom:-50px;
+			/* border-bottom-style:none; */
+			margin-bottom:-20px;
 			padding-bottom:20px;
 		}
 		table.outer {
 			padding-left:5%;
-			margin-top:-35px;
+			/* margin-top:-35px; */
 			
 			margin-bottom:47px;
 		}
@@ -68,6 +68,9 @@
 			border-color:black;
 			border-width:5px;
 			margin:3px;
+		}
+		button.paint.active {
+			border-color: #d90f4f;
 		}
 		img{
 			padding-top:6px;
