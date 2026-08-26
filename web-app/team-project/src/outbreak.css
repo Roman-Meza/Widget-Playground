@@ -130,3 +130,10 @@
 	border: 2px dashed rgba(201, 163, 255, 0.5);
 	font-size: 11px;
 }
+
+.outbreak-start{
+	position: relative;
+	z-index: 1;
+	font-size: 32px;
+	top: 300px;
+}

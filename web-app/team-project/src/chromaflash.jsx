@@ -1,6 +1,7 @@
 import './chromaflash.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import chromaLogo from './assets/chromaflash/logo.png'
 
 const SATURATION = 70;
 const LIGHTNESS = 50;
@@ -184,7 +185,7 @@ function ChromaFlash() {
 
 	return (
 		<div className="cf-page">
-			<h1 className="cf-title">ChromaFlash</h1>
+			<img src={chromaLogo} className="applogo" alt="ChromaFlash logo" />
 
 			<div className="cf-scoreline">
 				<span>Score: <strong>{score}</strong></span>

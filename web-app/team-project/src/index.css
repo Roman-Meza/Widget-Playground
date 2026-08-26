@@ -34,8 +34,9 @@
   :root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
+    --bg: #0875a1;
+    --bg: linear-gradient(90deg,rgba(8, 117, 161, 1) 0%, rgba(21, 50, 94, 1) 15%, rgba(21, 50, 94, 1) 85%, rgba(8, 117, 161, 1) 100%);
+    --border: #c6cbe2;
     --code-bg: #1f2028;
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);

@@ -1,6 +1,12 @@
 import './outbreak.css';
 import { Link } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
+import outbreakLogo from './assets/outbreak/logo.png'
+import pill1 from './assets/outbreak/pill1.png'
+import pill2 from './assets/outbreak/pill2.png'
+import pill3 from './assets/outbreak/pill3.png'
+import pill4 from './assets/outbreak/pill4.png'
+import virus_img from './assets/outbreak/virus.png'
 
 function Outbreak() {
 	const pageRef = useRef(null);
@@ -13,7 +19,7 @@ function Outbreak() {
 		<div className="outbreak-page" ref={pageRef}>
 			<div className="outbreak-row">
 				<div className="outbreak-score-panel">
-					<h1 className="outbreak-title">OutBreak 🐺🕹️</h1>
+					<img src={outbreakLogo} className="applogo" alt="OutBreak logo" />
 					<div className="outbreak-canvas-wrap">
 						<canvas id="outbreakCanvas" width="650" height="500" />
 					</div>
@@ -57,6 +63,16 @@ function initializeOutbreak(pageRef) {
 	const musicButton = getElementById('outbreakMusic');
 	const scoreDisplay = getElementById('outbreakScore');
 	const blocksDisplay = getElementById('outbreakBlocks');
+	const pillgreen = new Image();
+	pillgreen.src=pill1;
+	const pillyellow = new Image();
+	pillyellow.src=pill2;
+	const pillred= new Image();
+	pillred.src=pill3;
+	const pillblue = new Image();
+	pillblue.src=pill4;
+	const virus = new Image();
+	virus.src=virus_img;
 
 	// drop the track at public/outbreak-music.mp3 and this just starts working, no code changes needed
 	const music = new Audio('/outbreak-music.mp3');
@@ -181,26 +197,30 @@ function initializeOutbreak(pageRef) {
 
 	// draws the ball with its little white glow
 	function DibujarPelota() {
-		ctx.save();
-		ctx.shadowColor = '#ffffff';
-		ctx.shadowBlur = 10;
-		ctx.beginPath();
-		ctx.arc(x, y, Pelota, 0, Math.PI * 2);
-		ctx.fillStyle = '#ffffff';
-		ctx.fill();
-		ctx.closePath();
-		ctx.restore();
+		// ctx.save();
+		// ctx.shadowColor = '#ffffff';
+		// ctx.shadowBlur = 10;
+		// ctx.beginPath();
+		// ctx.arc(x, y, Pelota, 0, Math.PI * 2);
+		// ctx.fillStyle = '#ffffff';
+		// ctx.fill();
+		// ctx.closePath();
+		// ctx.restore();
+		ctx.drawImage(virus,x-Pelota,y-Pelota);
 	}
 
 	// draws whatever blocks are still alive, row by row
 	function cuadros() {
 		let w = 40, h = 20, xx = 30, yy = 20;
+		let pillcolors=[pillgreen,pillyellow,pillred,pillblue];
+		let pill_img = new Image();
 
 		for (let f = 0; f < 4; f++) {
 			ctx.fillStyle = rowGradients[f];
+			pill_img=pillcolors[f]
 			for (let col = 0; col < 12; col++) {
 				if (matrizcuadros[f][col] != 0) {
-					drawRoundedRect(xx, yy, w, h, 4);
+					ctx.drawImage(pill_img,xx,yy);
 				}
 				xx += 50;
 			}

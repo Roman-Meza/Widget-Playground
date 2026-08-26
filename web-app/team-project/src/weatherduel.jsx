@@ -2,6 +2,7 @@ import './weatherduel.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import worldCities from './data/worldCities';
+import weatherLogo from  './assets/weatherduel/logo.png'
 
 const CATEGORY_META = {
 	temperature: { label: 'Temperature', unit: '°C', icon: '🌡️', higherLabel: 'Hotter', lowerLabel: 'Colder' },
@@ -183,7 +184,7 @@ function WeatherDuel() {
 
 	return (
 		<div className="wd-page">
-			<h1 className="wd-title">Weather Duel</h1>
+			<img src={weatherLogo} className="applogo" alt="Paint logo" />
 
 			{phase === 'setup' && (
 				<div className="wd-card wd-setup">
