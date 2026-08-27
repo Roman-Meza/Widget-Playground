@@ -26,7 +26,6 @@
 .applogo{
   height:150px;
 	padding-bottom:5px;
-  padding-right:50px;
 }
 
 .hero {
@@ -199,8 +198,37 @@
   }
 }
 
-.app-card{
+.single-app{
+  width: 75%;
   display: flex;
   flex-direction: row;
   align-items: center;
+  place-content: center;
+  place-items: center;
+}
+
+.app-card{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.18);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+.demovid{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardlogo{
+  margin: auto;
+}
+
+video{
+  height:300px;
+  border-radius: 20px;
 }

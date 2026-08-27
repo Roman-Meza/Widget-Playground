@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import appLogo from './assets/app-logo.png'
 import paintLogo from './assets/paint/logo.png'
 import outbreakLogo from './assets/outbreak/logo.png'
 import weatherLogo from  './assets/weatherduel/logo.png'
 import chromaLogo from './assets/chromaflash/logo.png'
+import paintDemo from './demovids/paintdemo.mp4'
+import outbreakDemo from './demovids/outbreakdemo.mp4'
+import weatherDemo from './demovids/weatherdemo.mp4'
+import chromaDemo from './demovids/chromademo.mp4'
 import './App.css'
 
 function App() {
@@ -27,39 +28,53 @@ function App() {
         
       </section>
       <section id="next-steps">
-        
-        <div className="app-card">
-          <div> 
-          <img src={paintLogo} className="applogo" alt="Paint logo" /></div>
-          <p>
-            A simple drawing app with customizable brush sizes and colors.< br/>< br/>
-            Unleash your creativity and doodle to your heart's content!< br/>< br/>
-            <Link to="/paint">
-          <button type="button" className="counter" onClick={resetScroll}>
-            Load SimplePaint
-          </button>
-        </Link>
-        </p>
+        <div className='single-app'>
+          <div className="app-card">
+            <div className='cardlogo'> 
+            <img src={paintLogo} className="applogo" alt="Paint logo" /></div>
+            <p>
+              A simple drawing app with customizable brush sizes and colors.< br/>< br/>
+              Unleash your creativity and doodle to your heart's content!< br/>< br/>
+              <Link to="/paint">
+            <button type="button" className="counter" onClick={resetScroll}>
+              Load SimplePaint
+            </button>
+          </Link>
+          </p>
+          </div>
+          <div className='demovid'>
+            <h2>Watch the demo below:</h2>
+            <video autoPlay loop muted playsInline>
+              <source src={paintDemo} type="video/mp4" />
+            </video></div>
         </div>
+        <div className='single-app'>
+          <div className='demovid'>
+            <h2>Watch the demo below:</h2>
+            <video autoPlay loop muted playsInline>
+              <source src={outbreakDemo} type="video/mp4" />
+            </video></div>
         <div className="app-card">
           <div>
           <img src={outbreakLogo} className="applogo" alt="OutBreak logo" /></div>
           <p>
             A retro Breakout-style arcade game.< br/>< br/>
-            Smash every block with your mouse-controlled paddle!< br/>< br/>
+            Move the paddle with your mouse to break the blocks!< br/>< br/>
             <Link to="/outbreak">
           <button type="button" className="counter" onClick={resetScroll}>
-            Load OutBreak
+            Load Outbreak
           </button>
         </Link>
         </p>
         </div>
+        </div>
+        <div className='single-app'>
         <div className="app-card">
           <div>
           <img src={weatherLogo} className="applogo" alt="Weather Duel logo" /></div>
           <p>
-            Guess if the world is hotter or more humid than your city.< br/>< br/>
-            Real weather data, streak-based Higher/Lower gameplay!< br/>< br/>
+            Can you guess the weather correctly?< br/>< br/>
+            Compare temperatures and humidity with real-time data!< br/>< br/>
             <Link to="/weatherduel">
           <button type="button" className="counter">
             Load Weather Duel
@@ -67,19 +82,32 @@ function App() {
         </Link>
         </p>
         </div>
+        <div className='demovid'>
+            <h2>Watch the demo below:</h2>
+            <video autoPlay loop muted playsInline>
+              <source src={weatherDemo} type="video/mp4" />
+            </video></div>
+        </div>
+        <div className='single-app'>
+          <div className='demovid'>
+            <h2>Watch the demo below:</h2>
+            <video autoPlay loop muted playsInline>
+              <source src={chromaDemo} type="video/mp4" />
+            </video></div>
         <div className="app-card">
           <div>
           <img src={chromaLogo} className="applogo" alt="ChromaFlash logo" />
           </div>
           <p>
-            Memorize a color, then click where it was on the wheel.< br/>< br/>
-            Fast-paced color memory with a scoring streak!< br/>< br/>
+            Memorize the color shown, then find it in a color wheel!< br/>< br/>
+            How high can your streak go?< br/>< br/>
             <Link to="/chromaflash">
           <button type="button" className="counter">
             Load ChromaFlash
           </button>
         </Link>
         </p>
+        </div>
         </div>
       </section>
     </>
