@@ -7,6 +7,8 @@ import Paint from './paint'
 import Outbreak from './outbreak'
 import WeatherDuel from './weatherduel'
 import ChromaFlash from './chromaflash'
+import Infinitelly from './infinitelly'
+import MathQuiz from './mathquiz'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
     path: "/chromaflash",
     element: <ChromaFlash />,
   },
+  {
+    path: "/infinitube",
+    element: <Infinitelly />,
+  },
+  {
+    path: "/numbermania",
+    element: <MathQuiz />,
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(

@@ -6,6 +6,8 @@ import paintLogo from './assets/paint/logo.png'
 import outbreakLogo from './assets/outbreak/logo.png'
 import weatherLogo from  './assets/weatherduel/logo.png'
 import chromaLogo from './assets/chromaflash/logo.png'
+import tvLogo from './assets/infinitelly/logo.png'
+import numberLogo from './assets/numbermania/logo.png'
 import paintDemo from './demovids/paintdemo.mp4'
 import outbreakDemo from './demovids/outbreakdemo.mp4'
 import weatherDemo from './demovids/weatherdemo.mp4'
@@ -36,7 +38,7 @@ function App() {
               A simple drawing app with customizable brush sizes and colors.< br/>< br/>
               Unleash your creativity and doodle to your heart's content!< br/>< br/>
               <Link to="/paint">
-            <button type="button" className="counter" onClick={resetScroll}>
+            <button type="button" className="counter">
               Load SimplePaint
             </button>
           </Link>
@@ -61,7 +63,7 @@ function App() {
             A retro Breakout-style arcade game.< br/>< br/>
             Move the paddle with your mouse to break the blocks!< br/>< br/>
             <Link to="/outbreak">
-          <button type="button" className="counter" onClick={resetScroll}>
+          <button type="button" className="counter">
             Load Outbreak
           </button>
         </Link>
@@ -109,15 +111,61 @@ function App() {
         </p>
         </div>
         </div>
+
+        <div className='single-app'>
+        <div className="app-card">
+          <div>
+          <img src={tvLogo} className="applogo" alt="InfiniTube logo" /></div>
+          <p>
+            Wanna take a break but don't know what to watch?< br/>< br/>
+            Tune into a slideshow of endless random images!< br/>< br/>
+            <Link to="/infinitube">
+          <button type="button" className="counter">
+            Load InfiniTube
+          </button>
+        </Link>
+        </p>
+        </div>
+        <div className='demovid'>
+            <h2>Watch the demo below:</h2>
+            <video autoPlay loop muted playsInline>
+              <source src={weatherDemo} type="video/mp4" />
+            </video></div>
+        </div>
+
+        <div className='single-app'>
+          <div className='demovid'>
+            <h2>Watch the demo below:</h2>
+            <video autoPlay loop muted playsInline>
+              <source src={chromaDemo} type="video/mp4" />
+            </video></div>
+        <div className="app-card">
+          <div>
+          <img src={numberLogo} className="applogo" alt="Number Mania logo" />
+          </div>
+          <p>
+            Test your arithmetic skills in this simple math game!< br/>< br/>
+            Includes different difficulty levels and operations.< br/>< br/>
+            <Link to="/numbermania">
+          <button type="button" className="counter">
+            Load Number Mania
+          </button>
+        </Link>
+        </p>
+        </div>
+        </div>
       </section>
+      <div className='footer'>
+        <h2>Questions? Contact us:</h2>
+        <ul>
+          <li>mail@mail.com</li>
+          <li>mail@mail.com</li>
+          <li>mail@mail.com</li>
+          <li>mail@mail.com</li>
+        </ul>
+      </div>
     </>
   )
-}
-
-function resetScroll(){
-  useEffect(() => {
-  window.scrollTo(0, 0)
-}, [])
 }
 
 export default App

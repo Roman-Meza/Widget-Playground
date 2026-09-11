@@ -184,7 +184,7 @@ function WeatherDuel() {
 
 	return (
 		<div className="wd-page">
-			<img src={weatherLogo} className="applogo" alt="Paint logo" />
+			<img src={weatherLogo} className="applogo" alt="Weather Duel logo" />
 
 			{phase === 'setup' && (
 				<div className="wd-card wd-setup">

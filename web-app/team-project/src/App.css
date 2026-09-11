@@ -232,3 +232,13 @@ video{
   height:300px;
   border-radius: 20px;
 }
+
+.footer{
+  background-color: rgb(70, 70, 70);
+  min-width: inherit;
+  padding: 25px;
+  padding-left: 30%;
+  padding-right: 30%;
+  -webkit-box-shadow: 0px -3px 15px 5px rgba(0,0,0,0.4); 
+  box-shadow: 0px -3px 15px 5px rgba(0,0,0,0.4);
+}
