@@ -55,6 +55,8 @@ function Outbreak() {
 function initializeOutbreak(pageRef) {
 	const getElementById = (id) => pageRef.current?.querySelector(`#${id}`);
 
+	//NOTE: Some variable names below are in Spanish because this app was originally a project for a class in Spanish.
+
 	const canvas = getElementById('outbreakCanvas');
 	const ctx = canvas.getContext('2d');
 	const winHeading = getElementById('outbreakWin');

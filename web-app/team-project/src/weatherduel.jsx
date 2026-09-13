@@ -188,7 +188,7 @@ function WeatherDuel() {
 
 			{phase === 'setup' && (
 				<div className="wd-card wd-setup">
-					<p className="wd-lead">Pick your city, then guess if the world is hotter or more humid than home.</p>
+					<p className="wd-lead">Pick a location and guess whether it's warmer/colder or has more/less humidity than another random place.</p>
 					<input
 						className="wd-search-input"
 						type="text"

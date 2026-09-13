@@ -104,13 +104,13 @@ function initializePaint(paintRef) {
 		setCursor(lineWidth <= 3 ? cursor : lineWidth < 8 ? cursor1 : cursor2);
 	};
 
-		const canvas = getElementById('myCanvas'); // Obtener el canvas
+		const canvas = getElementById('myCanvas'); // Get the canvas
 		const overlay = getElementById('overlay');
-        const ctx = canvas.getContext('2d'); // Obtener el contexto del canvas
+        const ctx = canvas.getContext('2d'); // Get the canvas context
 		const octx = overlay.getContext('2d');
 
-        let drawing = false; // Bandera para saber si el usuario está dibujando
-        let lastX = 0, lastY = 0; // Para rastrear la última posición del ratón
+        let drawing = false; // Flag to know if the user is drawing
+        let lastX = 0, lastY = 0; // To track the last mouse position
 		let lastX2 = 0, lastY2 = 0;
 		
 		let drawingSquare=false;
@@ -172,32 +172,16 @@ function initializePaint(paintRef) {
 		});
 	
 
-        // Cambiar el grosor del trazo
+        // Change brush thickness
 		getElementById('lineWidth').addEventListener('input', (e) => {
             ctx.lineWidth = e.target.value;
 			setBrushCursor(ctx.lineWidth);
         });
 
-        // Evento para borrar todo el lienzo
+        // Event to clear the entire canvas
 		getElementById('clearCanvas').addEventListener('click', () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
         });
-
-	    // Guardar dibujo como .png
-		// var link = getElementById('saveCanvas');
-	// link.setAttribute('download', 'drawing.png');
-	// link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-	// link.click();
-
-		// getElementById('playMusic').addEventListener('click', () => {
-        //     if(tocaMusica){
-		// 		musica.pause();
-		// 		tocaMusica=false;
-		// 	}else{
-		// 		musica.play();
-		// 		tocaMusica=true;
-		// 	}
-        // });
 		
 		getElementById('drawSquare').addEventListener('click', () => {
 			if(drawingSquare){
@@ -370,7 +354,7 @@ function initializePaint(paintRef) {
 			setBrushCursor(ctx.lineWidth);
 		});
 
-        // Evento al presionar el ratón
+        // Event when pressing the mouse
         overlay.addEventListener('mousedown', (e) => {
 			if(dropperActive){
 				var data = ctx.getImageData(e.offsetX, e.offsetY, 600, 500).data;
@@ -406,24 +390,24 @@ function initializePaint(paintRef) {
 				drawingBezier=true;
 				return;
 			}
-            drawing = true; // Activar la bandera de dibujo
-            [lastX, lastY] = [e.offsetX, e.offsetY]; // Guardar la posición inicial
+            drawing = true; // Activate the drawing flag
+            [lastX, lastY] = [e.offsetX, e.offsetY]; // Save the initial position
 			if(!(rainbowBrush||rainbowBrush1)){
 			ctx.strokeStyle="rgba("+redSlider.value+","+greenSlider.value+","+blueSlider.value+","+(1-alphaSlider.value/100)+")";
 			ctx.fillStyle="rgba("+redSlider.value+","+greenSlider.value+","+blueSlider.value+","+(1-alphaSlider.value/100)+")";
 			}
         });
 
-        // Evento al soltar el ratón
+        // Event when releasing the mouse
         overlay.addEventListener('mouseup', () => {
 			if(drawingSquare||drawingCircle||drawingLine) ctx.stroke();
 			if(fillingSquare||fillingCircle) ctx.fill();
 			if(curveClick) drawingCurve=false;
 			if(bezierCount>0) drawingBezier=false;
-            drawing = false; // Desactivar la bandera de dibujo
+            drawing = false; // Deactivate the drawing flag
         });
 
-        // Evento al mover el ratón
+        // Event when moving the mouse
         overlay.addEventListener('mousemove', (e) => {
             if (!drawing){
 				if(curveClick){
@@ -468,11 +452,11 @@ function initializePaint(paintRef) {
 				}else{
 					return;
 				}
-			} // Si no estamos dibujando, salimos de la función
+			} // If we are not drawing, we exit the function
 			if (drawingSquare||fillingSquare){
 				ctx.lineCap = 'square';
-				ctx.beginPath(); // Comenzar un nuevo camino
-				ctx.moveTo(lastX, lastY); // Moverse a la última posición
+				ctx.beginPath(); // Start a new path
+				ctx.moveTo(lastX, lastY); // Move to the last position
 				ctx.lineTo(e.offsetX, lastY);
 				ctx.lineTo(e.offsetX, e.offsetY); 
 				ctx.lineTo(lastX, e.offsetY); 
@@ -533,11 +517,11 @@ function initializePaint(paintRef) {
 				bezierCount=1;
 			}else if(!(curveClick)&&bezierCount==0){
 				ctx.lineCap = 'round';
-				ctx.beginPath(); // Comenzar un nuevo camino
-				ctx.moveTo(lastX, lastY); // Moverse a la última posición
-				ctx.lineTo(e.offsetX, e.offsetY); // Dibujar hasta la nueva posición
-				ctx.stroke(); // Realizar el trazo
-				[lastX, lastY] = [e.offsetX, e.offsetY]; // Actualizar la última posición
+				ctx.beginPath(); // Start a new path
+				ctx.moveTo(lastX, lastY); // Move to the last position
+				ctx.lineTo(e.offsetX, e.offsetY); // Draw to the new position
+				ctx.stroke(); // Perform the stroke
+				[lastX, lastY] = [e.offsetX, e.offsetY]; // Update the last position
 			}
         });
 		
@@ -545,8 +529,8 @@ function initializePaint(paintRef) {
 			return new Promise(resolve => setTimeout(resolve, ms));
 		}
 
-        // Establecer propiedades del trazo
-        ctx.lineWidth = 3; // Ancho del trazo
-        ctx.lineCap = 'round'; // Terminar los trazos con un borde redondeado
+        // Set stroke properties
+        ctx.lineWidth = 3; // Stroke width
+        ctx.lineCap = 'round'; // End strokes with a rounded edge
     }
 export default Paint
