@@ -1,7 +1,8 @@
 :root {
   --text: #6b6375;
   --text-h: #08060d;
-  --bg: #fff;
+  --bg: #0875a1;
+  --bg: linear-gradient(90deg,rgba(8, 117, 161, 1) 0%, rgba(21, 50, 94, 1) 15%, rgba(21, 50, 94, 1) 85%, rgba(8, 117, 161, 1) 100%);
   /* --border: #e5e4e7; */
   --code-bg: #f4f3ec;
    --accent: #209ce9;
