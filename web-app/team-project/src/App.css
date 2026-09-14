@@ -206,6 +206,7 @@
   align-items: center;
   place-content: center;
   place-items: center;
+  margin-bottom: -50px;
 }
 
 .app-card{
@@ -232,6 +233,7 @@
 video{
   height:300px;
   border-radius: 20px;
+  margin-bottom: 30px;
 }
 
 .footer{
@@ -242,6 +244,7 @@ video{
   padding-right: 30%;
   -webkit-box-shadow: 0px -3px 15px 5px rgba(0,0,0,0.4); 
   box-shadow: 0px -3px 15px 5px rgba(0,0,0,0.4);
+  margin-top: 50px;
 }
 
 hr {
